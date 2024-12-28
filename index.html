@@ -1,0 +1,62 @@
+ <div class="countdown" id="countdown">
+        <h2>Contagem Regressiva</h2>
+        <p id="timer">Carregando...</p>
+    </div>
+
+    <div class="schedule">
+        <h2>Cronograma de Eventos</h2>
+        <ul id="event-list">
+            <li><strong>20:00</strong> - Recepção e boas-vindas</li>
+            <li><strong>21:00</strong> - Jantar especial ✨</li>
+            <li><strong>23:30</strong> - Preparação para a contagem regressiva</li>
+            <li><strong>00:00</strong> - Queima de fogos 🎆</li>
+            <li><strong>00:30</strong> - Música ao vivo 🎶</li>
+        </ul>
+    </div>
+
+    <script>
+        // Atualiza a contagem regressiva dinamicamente
+        function updateCountdown() {
+            const newYear = new Date('January 1, 2024 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = newYear - now;
+
+            if (distance < 0) {
+                document.getElementById('timer').innerText = "Feliz Ano Novo! 🎆";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('timer').innerText = 
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+
+    <div class="guests">
+        <h2>Lista de Convidados</h2>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Regina</li>
+            <li>Rui</li>
+            <li>José</li>
+            <li>Rita</li>
+            <li>Joana</li>
+            <li>Constança</li>
+            <li>Carminho</li>
+            <li>Afonso</li>
+            <li>Benedita</li>
+            <li>Martins</li>
+            <li>Lurdes</li>
+            <li>João</li>
+            <li>Sofia</li>
+        </ul>
+    </div>
+
+</body>
